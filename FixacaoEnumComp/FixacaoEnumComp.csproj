@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Enum\StatusPedido.cs" />
+    <Compile Include="Entities\ItemPedido.cs" />
+    <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
