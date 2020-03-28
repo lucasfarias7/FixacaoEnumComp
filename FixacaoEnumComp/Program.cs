@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FixacaoEnumComp.Entities;
 using FixacaoEnumComp.Entities.Enum;
-using FixacaoEnumComp.Entities;
+using System;
+using System.ServiceProcess;
 using System.Globalization;
 
-namespace FixacaoEnumComp
+namespace MyWindowsService
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        static void Main()
         {
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[]
+            {
+                new Service1()
+            };
+            ServiceBase.Run(ServicesToRun);
 
             Console.WriteLine("Entre com os dados do cliente");
             Console.Write("Nome: ");
@@ -36,10 +42,10 @@ namespace FixacaoEnumComp
 
             ItemPedido ip = null;
 
-            for (int i=1; i<=n; i++)
+            for (int i = 1; i <= n; i++)
             {
                 Console.WriteLine("Entre com os dados do produto: ");
-                Console.WriteLine("#"+i+" pedido: ");
+                Console.WriteLine("#" + i + " pedido: ");
                 Console.Write("Nome: ");
                 string nomeprod = Console.ReadLine();
                 Console.Write("Preco: ");
@@ -56,12 +62,11 @@ namespace FixacaoEnumComp
             }
 
             Console.WriteLine();
-            
+
             Console.WriteLine(pedido);
-            
+
 
             Console.ReadKey();
-
         }
     }
 }
